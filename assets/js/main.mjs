@@ -2,7 +2,7 @@ import { firebaseConfig } from './firebase.mjs'
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore()
-console.log(db)
+//console.log(db)
 
 
 let colecao = 'home'
@@ -10,13 +10,14 @@ let documento = 'home'
 
 const descricao = document.getElementById('story')
 const buscBtn = document.querySelectorAll('.getBtn')
-console.log(descricao)
+//console.log(descricao)
 //console.log(buscBtn[0].id)
 //console.log(buscBtn[1].id)
 
 for(let i = 0; i < buscBtn.length; i++){
     buscBtn[i].addEventListener('click', function(){
-        console.log(buscBtn[i])
+        console.log(buscBtn[i].id)
+        getData(colecao, documento)
     })
 }
 
