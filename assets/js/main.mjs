@@ -9,19 +9,34 @@ let colecao = 'home'
 let documento = 'home'
 
 const descricao = document.getElementById('story')
+const descricaoo = document.getElementById('getDesc')
+const descricaooo = document.querySelectorAll('.getBtn')
 console.log(descricao)
-let buscarBtn = document.querySelector('.getBtn')
-console.log('buscar é ' + buscarBtn)
+console.log(descricaoo)
+console.log(descricaooo)
+let buscBtn = document.querySelector('.getBtn')
+console.log('buscar é ' + buscBtn)
 
-buscarBtn.addEventListener('click', (e) =>{
+/**
+ * 
+ * for(let i = 0; i < sectBtn.length; i++){
+        sectBtn[i].addEventListener('click', function(){
+            let currentBtn = document.querySelectorAll('.active-btn')
+            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '')
+            this.className += ' active-btn'
+        })
+    }
+ */
+
+/* buscarBtn.addEventListener('click', (e) =>{
     console.log('clicou em ' + e.id)
     const id = e.target.dataset.id
     console.log(id)
     getData(colecao, documento)
-    /* if (id){
+    if (id){
         
-    } */
-})
+    }
+}) */
 
 
 
