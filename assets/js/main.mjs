@@ -10,7 +10,7 @@ let documento = 'home'
 
 const descricao = document.getElementById('story')
 console.log(descricao)
-let buscarBtn = document.getElementById('getDesc')
+let buscarBtn = document.querySelector('.getBtn')
 console.log('buscar é ' + buscarBtn)
 
 buscarBtn.addEventListener('click', (e) =>{
@@ -41,9 +41,6 @@ function getData(collectionName, documentName){
     });
 }
 //getData(colecao, documento)
-
-
-
 
 
 
