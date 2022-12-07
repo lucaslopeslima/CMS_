@@ -17,6 +17,7 @@ buscarBtn.addEventListener('click', (e) =>{
     console.log('clicou em ' + e.id)
     const id = e.target.dataset.id
     console.log(id)
+    getData(colecao, documento)
     /* if (id){
         
     } */
@@ -40,7 +41,7 @@ function getData(collectionName, documentName){
         console.log("Error getting document:", error);
     });
 }
-//getData(colecao, documento)
+
 
 
 
