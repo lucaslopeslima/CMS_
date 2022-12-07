@@ -9,24 +9,16 @@ let colecao = 'home'
 let documento = 'home'
 
 const descricao = document.getElementById('story')
-const descricaoo = document.getElementById('getDesc')
-const descricaooo = document.querySelectorAll('.getBtn')
+const buscBtn = document.querySelectorAll('.getBtn')
 console.log(descricao)
-console.log(descricaoo)
-console.log(descricaooo)
-let buscBtn = document.querySelector('.getBtn')
-console.log('buscar é ' + buscBtn)
+//console.log(buscBtn[0].id)
+//console.log(buscBtn[1].id)
 
-/**
- * 
- * for(let i = 0; i < sectBtn.length; i++){
-        sectBtn[i].addEventListener('click', function(){
-            let currentBtn = document.querySelectorAll('.active-btn')
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '')
-            this.className += ' active-btn'
-        })
-    }
- */
+for(let i = 0; i < buscBtn.length; i++){
+    buscBtn[i].addEventListener('click', function(){
+        console.log(buscBtn[i])
+    })
+}
 
 /* buscarBtn.addEventListener('click', (e) =>{
     console.log('clicou em ' + e.id)
