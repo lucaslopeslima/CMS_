@@ -36,4 +36,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.getBtn {
+  cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */
