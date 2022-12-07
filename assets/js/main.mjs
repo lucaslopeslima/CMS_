@@ -6,7 +6,7 @@ const db = firebase.firestore()
 
 
 let colecao = 'home'
-let documento = 'home'
+let documento = ''
 
 const descricao = document.getElementById('story')
 const buscBtn = document.querySelectorAll('.getBtn')
@@ -17,7 +17,17 @@ const buscBtn = document.querySelectorAll('.getBtn')
 for(let i = 0; i < buscBtn.length; i++){
     buscBtn[i].addEventListener('click', function(){
         console.log(buscBtn[i].id)
-        getData(colecao, documento)
+        documento = buscBtn[i].id.toString()
+        console.log(documento)
+        
+        if(documento == 'getDesc'){
+            documento = 'home'
+            getData(colecao, documento)
+        }
+        if(documento == 'getAbout'){
+            documento = 'about'
+            getData(colecao, documento)
+        }
     })
 }
 
@@ -33,7 +43,25 @@ for(let i = 0; i < buscBtn.length; i++){
 
 
 
-function getData(collectionName, documentName){
+function getData(collectionName, documentName, arrayDados){
+    var homeCollection = db.collection(collectionName).doc(documentName)
+    homeCollection.get().then((doc)=>{
+        if(doc.exists){
+            console.log('Document Data: ', doc.data())
+            for (let a = 0; a < buscBtn.length; a++){
+               descricao.innerText = doc.data().arrayDados.map
+            }
+            
+        } 
+        else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+/* function getData(collectionName, documentName){
     var homeCollection = db.collection(collectionName).doc(documentName)
 
     homeCollection.get().then((doc)=>{
@@ -48,7 +76,7 @@ function getData(collectionName, documentName){
     }).catch((error) => {
         console.log("Error getting document:", error);
     });
-}
+} */
 
 
 
