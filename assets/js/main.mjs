@@ -8,7 +8,7 @@ const db = firebase.firestore()
 let colecao = 'home'
 let documento = ''
 
-const descricao = document.getElementById('story')
+//const descricao = document.getElementById('story')
 const buscBtn = document.querySelectorAll('.getBtn')
 //console.log(descricao)
 //console.log(buscBtn[0].id)
@@ -22,11 +22,13 @@ for(let i = 0; i < buscBtn.length; i++){
         
         if(documento == 'getDesc'){
             documento = 'home'
-            getData(colecao, documento)
+            getData(colecao, documento, 'descricao')
         }
         if(documento == 'getAbout'){
             documento = 'about'
-            getData(colecao, documento)
+            let timeline = []
+            let array = ['info', timeline]
+            getData(colecao, documento, array)
         }
     })
 }
@@ -43,13 +45,15 @@ for(let i = 0; i < buscBtn.length; i++){
 
 
 
-function getData(collectionName, documentName, arrayDados){
+function getData(collectionName, documentName, dados){
+    console.log(dados)
     var homeCollection = db.collection(collectionName).doc(documentName)
+    let descricao = document.getElementById('story')
     homeCollection.get().then((doc)=>{
         if(doc.exists){
             console.log('Document Data: ', doc.data())
             for (let a = 0; a < buscBtn.length; a++){
-               descricao.innerText = doc.data().arrayDados.map
+               descricao.innerText = doc.data().arrayDados.map()
             }
             
         } 
