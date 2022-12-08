@@ -26,7 +26,7 @@ for(let i = 0; i < buscBtn.length; i++){
         }
         if(documento == 'getAbout'){
             documento = 'about'
-            let timeline = []
+            let timeline = ['cargo', 'desc', 'local']
             let array = ['info', timeline]
             getData(colecao, documento, array)
         }
