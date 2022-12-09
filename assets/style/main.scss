@@ -1,3 +1,23 @@
+:root{
+    --color-primary: #191d2b;
+    /* --color-secondary: #27AE60; */
+    --color-secondary: #ffa500;
+    --color-secondary-slide-up: #d48c06;
+    --color-white: #FFFFFF;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey1: #dbe1e8;
+    --color-grey2: #b2becd;
+    --color-grey3: #6c7983;
+    --color-grey4: #454e56;
+    --color-grey5: #2a2e35;
+    --color-grey6: #12181b;
+    --color-hiper-link:#208f4e;
+    --br-sm-2: 14px;
+    --box-shadow1: 0 3px 15px rgba(0,0,0,.3);
+    --transition-effect: all .4s ease-in-out;   
+}
+
 *{
     margin: 0;
     padding: 0;

@@ -10,6 +10,7 @@ let documento = ''
 
 //const descricao = document.getElementById('story')
 const buscBtn = document.querySelectorAll('.getBtn')
+console.log(buscBtn)
 //console.log(descricao)
 //console.log(buscBtn[0].id)
 //console.log(buscBtn[1].id)
@@ -22,7 +23,7 @@ for(let i = 0; i < buscBtn.length; i++){
         
         if(documento == 'getDesc'){
             documento = 'home'
-            getData(colecao, documento, 'descricao')
+            getData(colecao, documento, ['descricao'])
         }
         if(documento == 'getAbout'){
             documento = 'about'
@@ -45,16 +46,31 @@ for(let i = 0; i < buscBtn.length; i++){
 
 
 
-function getData(collectionName, documentName, dados){
-    console.log(dados)
+function getData(collectionName, documentName, dataName){
+    console.log(dataName)
     var homeCollection = db.collection(collectionName).doc(documentName)
     let descricao = document.getElementById('story')
+    let abInfo = document.getElementById('aboutInfo')
+    let abTimeLine1 = document.getElementById('aboutTimeLine')
     homeCollection.get().then((doc)=>{
         if(doc.exists){
             console.log('Document Data: ', doc.data())
-            for (let a = 0; a < buscBtn.length; a++){
-               descricao.innerText = doc.data().arrayDados.map()
-            }
+            dataName.forEach((dado)=>{
+                console.log(dado)
+                if (dado == "descricao"){
+                    descricao.innerText = doc.data().descricao
+                }
+                if (dado == 'info'){
+                    abInfo.innerText = doc.data().info
+                    
+                }
+                abTimeLine1.innerText = doc.data().timeLine
+                
+                
+            })
+            /* for (let a = 0; a < buscBtn.length; a++){
+               descricao.innerText = doc.data().descricao
+            } */
             
         }
         else {
