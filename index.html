@@ -6,9 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS</title>
     <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/55a63e3d19.js" crossorigin="anonymous"></script>
 </head>
-<body class="main-content flex-center">
-    <div class="form form-home">
+<body class="main-content">
+    <header class="section sec1 header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="slide-up"></div>
+                <div class="image">
+                    <img src="assets/img/hero.png" alt="Hero">
+                </div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">Olá, eu sou <span id="app"> Desenvolvedor Web.</span> </h1>
+
+                <p><textarea id="story" name="story" rows="7" cols="80"></textarea></p>
+                <div class="btn-con getBtn" id="getDesc">
+                    <div class="main-btn">
+                        <span class="btn-text">Get Data</span>
+                        <span class="btn-icon"><i class="fas fa-download"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+    <!-- <div class="form form-home">
         <label for="story">Home descrição: </label>
         <textarea id="story" name="story" rows="5" cols="33"></textarea>
         <div class="getBtn" id="getDesc"><h2>Buscar</h2></div>
@@ -21,12 +56,8 @@
         <textarea id="aboutTimeLine" name="about" rows="5" cols="33"></textarea>
         <div class="getBtn" id="getAbout"><h2>Buscar</h2></div>
         <div class="postBtn" id="sendAbout"><h2>Enviar</h2></div>
-    </div>
-<div class="hamburger">
-    <div class="flip">
-        
-    </div>
-</div>
+    </div> -->
+
 
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
