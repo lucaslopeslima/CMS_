@@ -56,7 +56,7 @@ function getData(collectionName, documentName, dados){
                descricao.innerText = doc.data().arrayDados.map()
             }
             
-        } 
+        }
         else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
