@@ -69,16 +69,12 @@ function getData(collectionName, documentName, dataName){
                 }
                 if (dado == 'info'){
                     abInfo.innerText = doc.data().info
-                    
                 }
                 //abTimeLine1.innerText = doc.data().timeLine
-                
-                
             })
             /* for (let a = 0; a < buscBtn.length; a++){
                descricao.innerText = doc.data().descricao
             } */
-            
         }
         else {
             // doc.data() will be undefined in this case
