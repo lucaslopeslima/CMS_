@@ -32,10 +32,16 @@ for(let i = 0; i < buscBtn.length; i++){
             setData(colecao, documento, setDescricao.value)
         }
 
-        if(documento == 'getAbout'){
+        if(documento == 'getAboutInfo'){
             documento = 'about'
             let timeline = ['cargo', 'desc', 'local']
-            let array = ['info', timeline]
+            let array = ['info']
+            getData(colecao, documento, array)
+        }
+        if(documento == 'getAboutTimeLine'){
+            documento = 'about'
+            let timeline = ['cargo', 'desc', 'local']
+            let array = timeline
             getData(colecao, documento, array)
         }
     })
@@ -54,21 +60,30 @@ for(let i = 0; i < buscBtn.length; i++){
 
 
 function getData(collectionName, documentName, dataName){
-    console.log(dataName)
+    console.log('dataName',dataName)
     var homeCollection = db.collection(collectionName).doc(documentName)
     let descricao = document.getElementById('story')
     let abInfo = document.getElementById('aboutInfo')
-    let abTimeLine1 = document.getElementById('aboutTimeLine')
+    let timeLineFirstDec = document.getElementById('aboutTimeLineFirstDec')
     homeCollection.get().then((doc)=>{
         if(doc.exists){
             console.log('Document Data: ', doc.data())
-            dataName.forEach((dado)=>{
-                console.log(dado)
-                if (dado == "descricao"){
+            dataName.forEach((dataName)=>{
+                console.log(dataName)
+                if (dataName == "descricao"){
                     descricao.innerText = doc.data().descricao
                 }
-                if (dado == 'info'){
+                if (dataName == 'info'){
                     abInfo.innerText = doc.data().info
+                }
+                if (dataName == 'cargo'){
+                    timeLineFirstDec.innerText = doc.data().timeLine.second.dec
+                }
+                if (dataName == 'local'){
+                    timeLineFirstDec.innerText = doc.data().timeLine.second.dec
+                }
+                if (dataName == 'desc'){
+                    timeLineFirstDec.innerText = doc.data().timeLine.second.dec
                 }
                 //abTimeLine1.innerText = doc.data().timeLine
             })
