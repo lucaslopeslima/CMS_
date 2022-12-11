@@ -27,9 +27,15 @@ for(let i = 0; i < buscBtn.length; i++){
         }
         if(documento == 'postDesc'){
             documento = 'home'
-            let setDescricao = document.getElementById('story')
+            let setDescricao = document.getElementById('descricao')
+            let objId = setDescricao.id
             console.log(setDescricao.value)
-            setData(colecao, documento, setDescricao.value)
+            console.log(setDescricao.id)
+            let obj = {
+                [objId]: setDescricao.value,
+            }
+            console.log('obj:',obj)
+            setData(colecao, documento, obj)
         }
 
         if(documento == 'getAboutInfo'){
@@ -62,7 +68,7 @@ for(let i = 0; i < buscBtn.length; i++){
 function getData(collectionName, documentName, dataName){
     console.log('dataName',dataName)
     var homeCollection = db.collection(collectionName).doc(documentName)
-    let descricao = document.getElementById('story')
+    let descricao = document.getElementById('descricao')
     let abInfo = document.getElementById('aboutInfo')
     let timeLineFirstDec = document.getElementById('aboutTimeLineFirstDec')
     let elemento = document.querySelectorAll('textarea')
@@ -105,7 +111,15 @@ function getData(collectionName, documentName, dataName){
 
 
 function setData(collectionName, documentName, dataName){
-    
+    db.collection(collectionName).doc(documentName).set({
+        dataName
+    })
+    .then(() => {
+        console.log("Document successfully written!");
+    })
+    .catch((error) => {
+        console.error("Error writing document: ", error);
+    });
 }
 
 
