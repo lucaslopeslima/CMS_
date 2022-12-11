@@ -184,6 +184,43 @@ textarea {
   background-color: var(--color-primary);
 }
 
+.main-title {
+  text-align: center;
+}
+
+.main-title h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.main-title h2 span {
+  width: 100%;
+  color: var(--color-secondary);
+}
+
+.main-title h2 .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* color: var(--color-grey4); */
+  color: #80808024;
+  transition: var(--transition-effect);
+  -webkit-transition: var(--transition-effect);
+  -moz-transition: var(--transition-effect);
+  -ms-transition: var(--transition-effect);
+  -o-transition: var(--transition-effect);
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 6.3rem;
+}
+
 .header-content {
   display: -ms-grid;
   display: grid;
