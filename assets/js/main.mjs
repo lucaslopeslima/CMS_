@@ -81,7 +81,7 @@ function getData(collectionName, documentName, dataName){
             console.log("No such document!");
         }
     }).catch((error) => {
-        console.log("Error getting document:", error);
+        console.log("Error getting document: ", error);
     });
 }
 
