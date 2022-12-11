@@ -65,11 +65,13 @@ function getData(collectionName, documentName, dataName){
     let descricao = document.getElementById('story')
     let abInfo = document.getElementById('aboutInfo')
     let timeLineFirstDec = document.getElementById('aboutTimeLineFirstDec')
+    let elemento = document.querySelectorAll('textarea')
+    console.log('elemento:',elemento)
     homeCollection.get().then((doc)=>{
         if(doc.exists){
             console.log('Document Data: ', doc.data())
             dataName.forEach((dataName)=>{
-                console.log(dataName)
+                console.log('dataName:',dataName)
                 if (dataName == "descricao"){
                     descricao.innerText = doc.data().descricao
                 }
@@ -102,7 +104,9 @@ function getData(collectionName, documentName, dataName){
 
 
 
-
+function setData(collectionName, documentName, dataName){
+    
+}
 
 
 
