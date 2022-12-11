@@ -111,6 +111,7 @@ function getData(collectionName, documentName, dataName){
 
 
 function setData(collectionName, documentName, dataName){
+    console.log('set dataName',dataName)
     db.collection(collectionName).doc(documentName).set({
         dataName
     })
