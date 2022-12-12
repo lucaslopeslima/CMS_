@@ -194,23 +194,29 @@ textarea{
 
 
 .header-content{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
     height: 100%;
     .left-header{
+        /* background-color: green; */
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         position: relative;
         .h-shape{
             transition: all .4s ease-in-out;
             width: 65%;
             height: 100%;
             background-color: var(--color-secondary);
-            background-color: white;
             position: absolute;
             left: 0;
             top: 0;
-            z-index: -1;
+            /* z-index: -1; */
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
             animation: slideIn 1.5s ease-in-out forwards !important;
             @keyframes slideIn {
@@ -233,7 +239,7 @@ textarea{
             position: absolute;
             left: 0;
             bottom: 0;
-            z-index: -1;
+            /* z-index: -1; */
             clip-path: polygon(0 26%, 59% 42%, 100% 100%, 0 100%);
             animation: slideUp .8s ease-in-out forwards .8s !important;
             -webkit-animation: slideUp .8s ease-in-out forwards .8s !important;
@@ -284,11 +290,14 @@ textarea{
 
     }
     .right-header{
+        /* background-color: blue; */
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         padding-right: 18rem;
         .name{
+            /* background-color: yellow; */
             height: 8rem;
             font-size: 3rem;
             span{
@@ -297,6 +306,7 @@ textarea{
             }
         }
         p{
+            /* background-color: #14bbf3; */
             max-width: 800px;
             min-height: 80px;
             height: auto;
@@ -426,6 +436,8 @@ textarea{
 
 }
 
+
+@import 'media'
 /*
 body{
     height: 100vh;
