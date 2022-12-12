@@ -79,7 +79,7 @@ function getData(collectionName, documentName, dataName){
             dataName.forEach((dataName)=>{
                 console.log('dataName:',dataName)
                 if (dataName == "descricao"){
-                    descricao.innerText = doc.data().descricao
+                    descricao.innerText = doc.data().dataName.descricao
                 }
                 if (dataName == 'info'){
                     abInfo.innerText = doc.data().info
